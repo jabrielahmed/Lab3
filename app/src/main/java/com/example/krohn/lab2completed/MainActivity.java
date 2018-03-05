@@ -12,11 +12,10 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
 
-        Resources res = getResources();
-        TypedArray icons = res.obtainTypedArray(R.array.icons);
-        Drawable drawable = icons.getDrawable(0);
+        private TypedArray img;
+        img = getResources().obtainTypedArray(R.array.your_array_name);
+        ImageView.setBackgroundResource(img.getResourceId(index, defaultValue));
 
-        TypedArray colors = res.obtainTypedArray(R.array.colors);
         int color = colors.getColor(0,0);
         if(getResources().getConfiguration().orientation==Configuration.ORIENTATION_LANDSCAPE) {
             setContentView(R.layout.activity_landscape);
